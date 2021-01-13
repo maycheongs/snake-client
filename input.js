@@ -1,3 +1,4 @@
+const { controls } = require('./constants')
 let connection;
 
 const setupInput = (conn) => {
@@ -9,17 +10,9 @@ const setupInput = (conn) => {
 
   const handleUserInput = stdin.on('data', key => {
     if (key === '\u0003') process.exit();
-    if (key === 'w')  connection.write('Move: up');
-    if (key === 's')  connection.write('Move: down');
-    if (key === 'a')  connection.write('Move: left');
-    if (key === 'd')  connection.write('Move: right');
-    if (key === '1')  connection.write('Say: omg');
-    if (key === '2')  connection.write('Say: halp');
-    if (key === '3')  connection.write('Say: (ᵔᴥᵔ)');
-    if (key === 'b')  connection.write('Say: byebye'); 
+    if (controls[key])  connection.write(controls[key]);  
   });
   
-
   stdin.resume();
 
   return stdin;
