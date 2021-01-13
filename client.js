@@ -9,6 +9,11 @@ const connect = () => {
 
   play.setEncoding('utf8');
 
+  play.on('connect', () => {
+    console.log('connected!');
+    play.write('Name: mc')
+  })
+
   play.on('data', msg => {
     console.log(msg)
   })
