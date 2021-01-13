@@ -3,7 +3,9 @@ const connect = require('./client');
 
 
 
-connect();
+const snake = connect('mc');
 
+
+//snake.write('Move: up')
 
 
