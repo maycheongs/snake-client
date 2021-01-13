@@ -1,14 +1,14 @@
 const { connect } = require('./client');
 const { setupInput } = require('./input');
 
+const playername = 'may';
 
 
 
-//const snake = connect('mc');
 
 
-connect();
-setupInput();
+
+setupInput(connect(playername));
 
 
 

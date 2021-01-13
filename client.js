@@ -12,16 +12,12 @@ const connect = name => {
   play.on('connect', () => {
     console.log('connected!');
     play.write(`Name: ${name}`);
+  })  
     
-    let timer = setInterval(() => {
-      play.write('Move: up')
-    },500);
-    setTimeout(() => clearInterval(timer), 2000);
-  })
-
   play.on('data', msg => {
     console.log(msg)
   })
+  
 
 
 
