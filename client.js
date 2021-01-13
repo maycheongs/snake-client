@@ -29,4 +29,4 @@ const connect = name => {
 }
 
 
-module.exports = connect
+module.exports = { connect }
